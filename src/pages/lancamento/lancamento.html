@@ -1,0 +1,43 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Filmes Novos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card *ngFor="let lancamento of lista_lancamentos">
+
+    <ion-item>
+      <ion-avatar item-start>
+        <img [src]="'https://image.tmdb.org/t/p/w300' + lancamento.poster_path">
+      </ion-avatar>
+      <h2 class="titulo">{{lancamento.title}}</h2>
+      <p>{{lancamento.release_date | date:'d/M/y'}}</p>
+    </ion-item>
+
+    <img [src]="'https://image.tmdb.org/t/p/w300' + lancamento.backdrop_path">
+
+    <ion-card-content>
+      <p>{{lancamento.overview}}</p>
+    </ion-card-content>
+
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-start clear small>
+          <ion-icon name="thumbs-up"></ion-icon>
+          <div>{{lancamento.popularity | number: '3.2-2'}}</div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-start clear small>
+          <ion-icon name="heart"></ion-icon>
+          <div>Média: {{lancamento.vote_average}}</div>
+        </button>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
+</ion-content>

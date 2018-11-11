@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Inserir Filme</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+
+    <ion-item>
+      <ion-label fixed>Titulo</ion-label>
+      <ion-input type="text" value=""></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Imagem</ion-label>
+      <ion-input type="text" value=""></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Genero</ion-label>
+      <ion-select [(ngModel)]="genero">
+        <ion-option value="terror">Terror</ion-option>
+        <ion-option value="acao">Açao</ion-option>
+        <ion-option value="suspense">Suspense</ion-option>
+        <ion-option value="comedia">Comédia</ion-option>
+        <ion-option value="animacao">Animação</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Data de lançamento</ion-label>
+      <ion-input type="date"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-item>
+    <ion-label fixed>Sinopse</ion-label>
+    <ion-input type="number" value=""></ion-input>
+  </ion-item>
+
+  <button ion-button block (click)="presentLoading()">Salvar</button>
+</ion-content>
